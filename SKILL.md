@@ -1,6 +1,6 @@
 ---
 name: nursing-paper-polishing
-description: Polish, restructure, translate, or audit nursing, midwifery, digital health, and medical SCI manuscripts for a target journal or publisher style, with IJNS as a built-in profile. Use when the user asks for nursing SCI English polishing, IJNS/JMIR/Elsevier/Wiley journal adaptation, Journal of Advanced Nursing as a Wiley journal, journal-specific abstract/highlights/title rewriting, exemplar article scans from the target journal, format checks, causality and overclaim checks, scoping/systematic review polishing, research paper polishing, or inclusive medical language revision.
+description: Polish, restructure, translate, draft missing sections for, or audit nursing, midwifery, digital health, and medical SCI manuscripts for a target journal or publisher style, with IJNS as a built-in profile. Use when the user asks for nursing SCI English polishing, target-journal writing adaptation, missing paragraph or section completion from uploaded notes/files, IJNS/JMIR/Elsevier/Wiley journal adaptation, Journal of Advanced Nursing as a Wiley journal, journal-specific abstract/highlights/title rewriting, exemplar article scans from the target journal, format checks, causality and overclaim checks, scoping/systematic review polishing, research paper polishing, or inclusive medical language revision.
 metadata:
   author: Harston
 ---
@@ -16,6 +16,7 @@ Load these references as needed:
 - `references/ijns-requirements.md` when the target is IJNS or a similar Elsevier nursing journal.
 - `references/journal-adaptation.md` when the target is JMIR, Elsevier, Wiley, a Wiley journal such as Journal of Advanced Nursing, or another journal/publisher.
 - `references/exemplar-article-scan.md` when the user specifies both a target journal and article content/design, or asks to adapt wording to published articles from that journal.
+- `references/section-completion.md` when the user asks to write, complete, rebuild, or fill a missing paragraph/section from uploaded notes, partial drafts, tables, figures, reviewer comments, or other manuscript materials.
 - `references/inclusive-medical-language.md` for medical, nursing, aging, disability, sex/gender, race/ethnicity, stigma, or participant-description language checks.
 
 ## Default Stance
@@ -59,12 +60,13 @@ Do not follow the Nature-style writing order by default. Use a design-first and 
 4. Identify the relevant reporting guideline before polishing: CONSORT, STROBE, COREQ, SRQR, PRISMA, PRISMA-ScR, JBI scoping review guidance, COSMIN, GRRAS, TRIPOD, CHEERS, TIDieR, SAMPL, or another suitable EQUATOR guideline.
 5. Extract journal-specific constraints: abstract headings and word count, keywords, highlights or significance statement, main text headings, references, tables/figures, anonymization, data availability, AI disclosure, and formatting.
 6. If the target journal and article content/design are specified, perform an exemplar article scan before polishing. Find 2-3 comparable full-text articles from the same journal or publisher family, prioritizing the same study design.
-7. Identify the exact manuscript section being polished, such as Abstract, Introduction, Methods, Results, Discussion, Limitations, Conclusion, Highlights, or title page. If the section is not explicit, infer it from headings and content; if inference is unsafe, ask for the section before doing a section-specific rewrite.
+7. Identify the exact manuscript section being polished or completed, such as Abstract, Introduction, Methods, Results, Discussion, Limitations, Conclusion, Highlights, or title page. If the section is not explicit, infer it from headings and content; if inference is unsafe, ask for the section before doing a section-specific rewrite.
 8. Audit Methods and Results first, because they determine what the rest of the manuscript can legitimately claim.
-9. Polish Discussion, Limitations, and Conclusions next, keeping interpretation tied to the findings.
-10. Revise Background after the evidence logic is clear, using it to justify the problem, gap, and objective.
-11. Polish Abstract, Title, Keywords, highlights, significance statement, impact statement, or social media abstract last according to the selected journal.
-12. If the user provides a `.docx`, tables, figures, captions, or asks for submission readiness, audit formatting consistency after language revision.
+9. If the requested section is missing or only notes are provided, use `references/section-completion.md` to draft evidence-constrained prose before polishing.
+10. Polish Discussion, Limitations, and Conclusions next, keeping interpretation tied to the findings.
+11. Revise Background after the evidence logic is clear, using it to justify the problem, gap, and objective.
+12. Polish Abstract, Title, Keywords, highlights, significance statement, impact statement, or social media abstract last according to the selected journal.
+13. If the user provides a `.docx`, tables, figures, captions, or asks for submission readiness, audit formatting consistency after language revision.
 
 ## Exemplar Article Adaptation
 
@@ -80,6 +82,25 @@ The scan should:
 - Extract section-specific patterns only. For example, use Abstract exemplars to revise abstracts, Introduction exemplars for gap logic, Methods exemplars for reporting sequence, and Results exemplars for statistical reporting.
 - Compare patterns across exemplars and synthesize the writing logic; do not copy sentences or imitate one article too closely.
 - Cite or list the exemplar articles used in revision notes when internet search was performed.
+
+## Missing Section Completion
+
+Use `references/section-completion.md` when the user uploads only a missing paragraph file, a rough outline, tables, figures, extracted results, reviewer comments, or partial manuscript notes and asks Codex to write or complete a manuscript section.
+
+Completion is allowed only when enough author-provided evidence is available. Keep the user's evidence as the ceiling for every claim.
+
+Do:
+
+- reconstruct the section's rhetorical job from the target journal profile and same-section full-text exemplars;
+- map each sentence to an author-provided fact, table, figure, result, method detail, or cited source;
+- use `AUTHOR_INPUT_NEEDED: [specific missing item]` when essential evidence is absent;
+- draft the missing paragraph or section, then apply the same polishing, causality, inclusive-language, and target-journal checks.
+
+Do not:
+
+- invent findings, mechanisms, sample sizes, effect sizes, eligibility criteria, dates, databases, tools, ethics approval, registration numbers, citations, limitations, or implications;
+- write Results from no data, Methods from no protocol, or Discussion claims from no findings;
+- disguise missing information with vague polished language.
 
 ## Causality Guardrail
 
@@ -228,3 +249,8 @@ If the user asks for tracked reasoning or teaching feedback, provide:
 - `Why changed`
 
 If the manuscript section is underdeveloped, first give a brief `Structural diagnosis`, then provide the polished version.
+
+If the section was drafted from notes or partial materials, add:
+
+- `Evidence used:` with the author-provided inputs that supported the draft.
+- `Author input needed:` listing any placeholders or missing evidence.

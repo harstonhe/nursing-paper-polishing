@@ -2,9 +2,9 @@
 
 Author / 作者: Harston
 
-`nursing-paper-polishing` is a Codex skill for polishing nursing, midwifery, digital health, health services, and medical manuscripts. Its core feature is **target-journal adaptation through full-text exemplar articles**: when a journal, study design, topic, and manuscript section are provided, the skill searches for 2-3 accessible full-text articles from the target journal with the same method design and the closest possible topic match, then uses their section-level writing logic to polish the user's text.
+`nursing-paper-polishing` is a Codex skill for polishing, completing, and adapting nursing, midwifery, digital health, health services, and medical manuscripts. Its core feature is **target-journal adaptation through full-text exemplar articles**: when a journal, study design, topic, and manuscript section are provided, the skill searches for 2-3 accessible full-text articles from the target journal with the same method design and the closest possible topic match, then uses their section-level writing logic to polish or complete the user's text.
 
-`nursing-paper-polishing` 是一个面向护理、助产、数字健康、健康服务和医学论文的 Codex skill。它的核心不是普通英文润色，而是 **基于目标期刊全文范文的期刊适应性润色**：当用户提供目标期刊、研究设计、主题和论文结构部分时，skill 会先检索目标期刊中 2-3 篇可获取全文、方法设计一致且主题尽量相近的文章，再根据这些文章对应章节的结构、句型和逻辑来润色用户文本。
+`nursing-paper-polishing` 是一个面向护理、助产、数字健康、健康服务和医学论文的 Codex skill，可用于润色、补写和目标期刊适配。它的核心不是普通英文润色，而是 **基于目标期刊全文范文的期刊适应性写作**：当用户提供目标期刊、研究设计、主题和论文结构部分时，skill 会先检索目标期刊中 2-3 篇可获取全文、方法设计一致且主题尽量相近的文章，再根据这些文章对应章节的结构、句型和逻辑来润色或补全用户文本。
 
 ## Core Workflow / 核心流程
 
@@ -15,7 +15,7 @@ Author / 作者: Harston
 5. Search for 2-3 accessible full-text exemplar articles from the target journal.
 6. Prioritize exemplar articles with the same study design and maximum topic similarity.
 7. Extract section-specific writing patterns from the exemplars.
-8. Polish the user's text while preserving the original meaning, evidence, data, and study boundaries.
+8. Polish or complete the user's text while preserving the original meaning, evidence, data, and study boundaries.
 9. Apply nursing/medical language standards, including inclusive wording and non-causal language for non-causal designs.
 10. Report the exemplar basis and any unresolved journal-formatting uncertainty.
 
@@ -26,7 +26,7 @@ Author / 作者: Harston
 5. 检索目标期刊中 2-3 篇可获取全文的范文文章。
 6. 优先选择同研究设计且主题相似度最高的范文。
 7. 提取范文中对应章节的写作结构和逻辑。
-8. 在不改变原意、证据、数据和研究边界的前提下润色用户文本。
+8. 在不改变原意、证据、数据和研究边界的前提下润色或补写用户文本。
 9. 执行护理/医学英文统一标准，包括包容性表达和非因果研究的谨慎表述。
 10. 输出范文依据，并说明仍不确定的期刊格式问题。
 
@@ -98,6 +98,34 @@ The skill must not copy exemplar wording, import exemplar claims, or overfit to 
 
 skill 不应复制范文原句，不应引入范文中的结论或数据，也不应过度模仿单篇文章。
 
+## Missing Section Completion / 缺失段落补写
+
+The skill can also complete missing paragraphs or sections when the user provides notes, tables, figures, results, protocols, search strategies, reviewer comments, or partial drafts. In this mode, it composes the journal-adaptation workflow with evidence-constrained writing rules:
+
+- use author-provided materials as the evidence ceiling;
+- use target-journal guidelines and full-text exemplars for structure only;
+- draft only claims supported by the user's materials;
+- mark missing essential information as `AUTHOR_INPUT_NEEDED`;
+- polish the completed draft using the same journal-specific and language guardrails.
+
+该 skill 也可以在用户只上传缺失段落材料、提纲、表格、图、结果、protocol、检索策略、审稿意见或局部草稿时，自动补写缺失段落或章节。此模式会把目标期刊适配流程和证据约束写作规则结合起来：
+
+- 以用户提供的材料作为证据上限；
+- 目标期刊指南和全文范文只用于结构借鉴；
+- 只写用户材料能够支持的内容；
+- 缺少关键信息时用 `AUTHOR_INPUT_NEEDED` 标注；
+- 补写后继续执行期刊适配、因果约束和医学语言润色。
+
+Examples / 示例：
+
+```text
+Use nursing-paper-polishing to complete the missing Discussion paragraph for Journal of Nursing Scholarship using these results and Table 2.
+```
+
+```text
+请调用 nursing-paper-polishing，根据我上传的结果表和提纲补写 Discussion 的第一段，目标期刊是 International Journal of Nursing Studies。
+```
+
 ## Language Guardrails / 语言约束
 
 Across all target journals, the skill applies a consistent nursing and medical English standard:
@@ -145,6 +173,7 @@ Default output:
 3. Causality check.
 4. Exemplar basis, if a full-text exemplar scan was performed.
 5. Formatting check, if manuscript formatting was requested.
+6. Evidence used and Author input needed, if a missing section was completed.
 
 默认输出：
 
@@ -153,6 +182,7 @@ Default output:
 3. 因果表达检查。
 4. 如果进行了全文范文检索，列出范文依据。
 5. 如果用户要求格式检查，列出格式检查结果。
+6. 如果进行了缺失段落补写，列出使用的证据和仍需作者补充的信息。
 
 ## Example Prompts / 示例提示词
 
@@ -170,4 +200,8 @@ Use nursing-paper-polishing to revise this Abstract for JMIR Aging. This is a cr
 
 ```text
 请用 nursing-paper-polishing 检查这份 .docx 是否符合 Wiley 旗下 Journal of Advanced Nursing 的投稿格式，并指出需要按作者指南核实的项目。
+```
+
+```text
+Use nursing-paper-polishing to draft the missing Methods paragraph from this protocol and search log. Target journal: International Journal of Nursing Studies.
 ```
