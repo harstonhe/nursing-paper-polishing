@@ -9,7 +9,7 @@ Author / 作者: Harston
 ### 适用场景
 
 - 润色护理 SCI 论文的摘要、引言、方法、结果、讨论、结论、标题或 highlights。
-- 根据目标期刊适配稿件，例如 IJNS、JMIR、Elsevier 旗下期刊、Wiley 旗下期刊、Journal of Advanced Nursing 等。
+- 根据目标期刊适配稿件，例如 IJNS、JMIR、Elsevier 旗下期刊、Wiley 旗下期刊等。
 - 检查非因果研究中的因果化表达，避免不恰当地使用 `enhance`、`improve`、`reduce`、`lead to` 等词。
 - 检查医学与护理领域包容性表达，例如将 `elderly` 改为 `older adults`。
 - 检查 Word 文档格式、表格、图题、图中文字、字体、字号、行距和编号一致性。
@@ -43,7 +43,7 @@ Use nursing-paper-polishing to polish this abstract for JMIR. This is a cross-se
 
 - 不把 IJNS 的格式套用到 JMIR、Wiley 或其他期刊。
 - 不把出版社级别规则当作具体期刊规则。
-- Journal of Advanced Nursing 是 Wiley 旗下的一个具体期刊，应按它自己的 Author Guidelines 处理。
+- 具体期刊按它自己的 Author Guidelines 处理。
 - 如果没有目标期刊，默认使用通用护理 SCI 英文标准。
 - 如果需要最终投稿格式，最好上传目标期刊的 author guidelines 或 manuscript template。
 
