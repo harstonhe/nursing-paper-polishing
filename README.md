@@ -18,8 +18,8 @@
 
 ## 主要功能
 
-- 润色摘要、引言、方法、结果、讨论、结论、标题、highlights 和回复信。
-- 适配 IJNS、JMIR、Elsevier 期刊、Wiley 期刊、Journal of Advanced Nursing 等目标期刊。
+- 润色摘要、引言、方法、结果、讨论、结论、标题和 highlights。
+- 适配 IJNS、JMIR、Elsevier 期刊、Wiley 期刊等目标期刊。
 - 在期刊适配润色前检索可获取全文的同类范文。
 - 根据用户提供的提纲、表格、图片、结果、protocol 或局部草稿补写缺失段落。
 - 执行护理和医学语言约束，包括非因果研究避免因果表达，以及使用 `older adults` 等包容性术语。

@@ -18,8 +18,8 @@ Its core workflow is not generic editing. It adapts writing to a target journal 
 
 ## What It Does
 
-- Polishes abstracts, introductions, methods, results, discussions, conclusions, titles, highlights, and responses.
-- Adapts manuscripts to target journals such as IJNS, JMIR journals, Elsevier journals, Wiley journals, and Journal of Advanced Nursing.
+- Polishes abstracts, introductions, methods, results, discussions, conclusions, titles, and highlights.
+- Adapts manuscripts to target journals such as IJNS, JMIR journals, Elsevier journals, and Wiley journals.
 - Searches full-text exemplar articles before journal-specific rewriting.
 - Completes missing paragraphs or sections from user-provided notes, tables, figures, results, protocols, or partial drafts.
 - Applies nursing and medical language guardrails, including non-causal wording for non-causal designs and inclusive terminology such as `older adults`.
