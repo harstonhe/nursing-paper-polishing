@@ -1,147 +1,173 @@
-# nursing-paper-polishing 使用指南 / User Guide
+# nursing-paper-polishing
 
 Author / 作者: Harston
 
-## 中文说明
+`nursing-paper-polishing` is a Codex skill for polishing nursing, midwifery, digital health, health services, and medical manuscripts. Its core feature is **target-journal adaptation through full-text exemplar articles**: when a journal, study design, topic, and manuscript section are provided, the skill searches for 2-3 accessible full-text articles from the target journal with the same method design and the closest possible topic match, then uses their section-level writing logic to polish the user's text.
 
-`nursing-paper-polishing` 是一个面向护理、助产、数字健康、健康服务和医学论文的 Codex skill，用于根据目标期刊或出版社要求进行英文润色、结构调整、格式检查和投稿前语言风险审查。它保留 IJNS 作为内置 profile，但不再局限于 IJNS。
+`nursing-paper-polishing` 是一个面向护理、助产、数字健康、健康服务和医学论文的 Codex skill。它的核心不是普通英文润色，而是 **基于目标期刊全文范文的期刊适应性润色**：当用户提供目标期刊、研究设计、主题和论文结构部分时，skill 会先检索目标期刊中 2-3 篇可获取全文、方法设计一致且主题尽量相近的文章，再根据这些文章对应章节的结构、句型和逻辑来润色用户文本。
 
-### 适用场景
-
-- 润色护理 SCI 论文的摘要、引言、方法、结果、讨论、结论、标题或 highlights。
-- 根据目标期刊适配稿件，例如 IJNS、JMIR、Elsevier 旗下期刊、Wiley 旗下期刊等。
-- 检查非因果研究中的因果化表达，避免不恰当地使用 `enhance`、`improve`、`reduce`、`lead to` 等词。
-- 检查医学与护理领域包容性表达，例如将 `elderly` 改为 `older adults`。
-- 检查 Word 文档格式、表格、图题、图中文字、字体、字号、行距和编号一致性。
-
-### 推荐使用方式
-
-把目标期刊、稿件类型和研究设计告诉 Codex。例如：
-
-```text
-Use nursing-paper-polishing to polish this abstract for JMIR. This is a cross-sectional survey of nursing students.
-```
-
-```text
-请用 nursing-paper-polishing 润色这段 Discussion，目标期刊是 International Journal of Nursing Studies，研究设计是 scoping review。
-```
-
-```text
-请用 nursing-paper-polishing 检查这份 .docx 是否符合 Wiley 旗下 Journal of Advanced Nursing 的投稿格式。
-```
-
-### 工作逻辑
-
-1. 先识别目标期刊或出版社。
-2. 再识别文章类型和研究设计。
-3. 查询或读取对应作者指南。
-4. 按研究设计约束语言强度，尤其避免非因果研究写成因果结论。
-5. 按目标期刊处理摘要结构、标题、关键词、highlights、impact statement、reference style、表图格式和匿名审稿要求。
-6. 最后执行统一的护理/医学英文语言标准。
-
-### 重要原则
-
-- 不把 IJNS 的格式套用到 JMIR、Wiley 或其他期刊。
-- 不把出版社级别规则当作具体期刊规则。
-- 具体期刊按它自己的 Author Guidelines 处理。
-- 如果没有目标期刊，默认使用通用护理 SCI 英文标准。
-- 如果需要最终投稿格式，最好上传目标期刊的 author guidelines 或 manuscript template。
-
-## English Guide
-
-`nursing-paper-polishing` is a Codex skill for polishing nursing, midwifery, digital health, health services, and medical manuscripts. It adapts English style, structure, formatting, and submission checks to the target journal or publisher. IJNS is retained as a built-in profile, but the skill is not limited to IJNS.
-
-### Use Cases
-
-- Polish abstracts, introductions, methods, results, discussions, conclusions, titles, or highlights for nursing SCI manuscripts.
-- Adapt manuscripts for a target journal, such as IJNS, JMIR, Elsevier journals, Wiley journals, or Journal of Advanced Nursing.
-- Check causal overclaiming in non-causal studies and revise verbs such as `enhance`, `improve`, `reduce`, or `lead to`.
-- Apply inclusive medical and nursing language, such as replacing `elderly` with `older adults`.
-- Audit Word formatting, tables, figure captions, figure text, fonts, sizes, line spacing, and numbering consistency.
-
-### Recommended Prompts
-
-```text
-Use nursing-paper-polishing to polish this abstract for JMIR. This is a cross-sectional survey of nursing students.
-```
-
-```text
-Use nursing-paper-polishing to revise this Discussion for International Journal of Nursing Studies. The study is a scoping review.
-```
-
-```text
-Use nursing-paper-polishing to check whether this .docx follows the author guidelines for Journal of Advanced Nursing, a Wiley journal.
-```
-
-### Workflow
+## Core Workflow / 核心流程
 
 1. Identify the target journal or publisher.
 2. Identify the article type and study design.
-3. Read or retrieve the relevant author guidelines.
-4. Match language strength to the study design, especially for non-causal evidence.
-5. Adapt abstract headings, titles, keywords, highlights, impact statements, reference style, tables, figures, and anonymization to the target journal.
-6. Apply a consistent nursing and medical English standard.
+3. Identify the manuscript section being polished, such as Abstract, Introduction, Methods, Results, Discussion, Limitations, Conclusion, Highlights, or title.
+4. Retrieve or verify the target journal's official author guidelines.
+5. Search for 2-3 accessible full-text exemplar articles from the target journal.
+6. Prioritize exemplar articles with the same study design and maximum topic similarity.
+7. Extract section-specific writing patterns from the exemplars.
+8. Polish the user's text while preserving the original meaning, evidence, data, and study boundaries.
+9. Apply nursing/medical language standards, including inclusive wording and non-causal language for non-causal designs.
+10. Report the exemplar basis and any unresolved journal-formatting uncertainty.
 
-### Key Principles
+1. 识别目标期刊或出版社。
+2. 识别文章类型和研究设计。
+3. 识别要润色的论文结构部分，例如 Abstract、Introduction、Methods、Results、Discussion、Limitations、Conclusion、Highlights 或标题。
+4. 检索或核对目标期刊官方作者指南。
+5. 检索目标期刊中 2-3 篇可获取全文的范文文章。
+6. 优先选择同研究设计且主题相似度最高的范文。
+7. 提取范文中对应章节的写作结构和逻辑。
+8. 在不改变原意、证据、数据和研究边界的前提下润色用户文本。
+9. 执行护理/医学英文统一标准，包括包容性表达和非因果研究的谨慎表述。
+10. 输出范文依据，并说明仍不确定的期刊格式问题。
 
-- Do not apply IJNS formatting to JMIR, Wiley, or other journals.
-- Do not treat publisher-level rules as journal-specific rules.
-- Journal of Advanced Nursing is a specific Wiley journal and should be handled through its own Author Guidelines.
-- If no target journal is specified, use general nursing SCI English standards.
-- For final submission formatting, provide the target journal's author guidelines or manuscript template whenever possible.
+## Exemplar Search Rules / 范文检索规则
 
-## 增强期刊适应模式 / Enhanced Journal Adaptation Mode
+The skill must use **full-text exemplars only**. Abstract-only pages, PubMed records, Crossref records, DOI metadata pages, indexing pages, or citation database records can help identify candidate articles, but they do not count as exemplar articles.
 
-### 中文说明
-
-当你同时提供目标期刊、研究设计和文章主题时，skill 会先进行联网检索，查找目标期刊中 2-3 篇使用相同或最相近方法设计、且可以获取全文的文章，再根据这些文章的结构和写作逻辑润色你的文本。
-
-检索优先级为：
-
-1. 相同研究设计，例如 cross-sectional study、scoping review、RCT、qualitative study。
-2. 研究对象和疾病/状态，疾病优先于年龄段，例如 Alzheimer's disease/dementia 优先于 older adults。
-3. 干预、暴露、技术或研究方法，例如 chatbot、digital intervention、AI-based tool。
-4. 结局变量，例如 depression、quality of life、caregiver burden。
-
-最低匹配标准是：相同研究设计 + 以上 2-4 点中的任意一点。也就是说，如果指定的是横断面研究，优先检索目标期刊中所有可获取全文的横断面研究，再逐步加入疾病、人群、chatbot、抑郁等关键词。
-
-实际筛选时应先抓“同方法设计 + 主题最相似 + 可获取全文”的文章；如果没有，再逐步减少主题相似度。最次选择才是“同目标期刊 + 同方法设计 + 可获取全文，但主题相似度较低”的文章。
-
-不能获取全文的文章不能作为范文。PubMed、Crossref、DOI 页面、数据库索引页或仅有摘要的页面只能用于发现候选文献，不能计入 2-3 篇范文。若出版社页面受限，应继续用 DOI、题名、PMCID、PMC、机构仓储或作者稿检索全文。
-
-润色前还会判断文本属于论文哪个结构部分，例如 Abstract、Introduction、Methods、Results、Discussion、Limitations 或 Conclusion。随后只借鉴对应部分的写作逻辑，例如用 Abstract 范文改摘要结构，用 Methods 范文改方法顺序，用 Results 范文改统计报告方式。
-
-示例：
-
-```text
-Use nursing-paper-polishing to polish this Abstract for JMIR Aging. This is a cross-sectional study about chatbot use for depression among older adults with Alzheimer's disease.
-```
-
-如果没有指定投稿期刊，则默认按 IJNS 风格和护理 SCI 严谨性要求约束语言和格式。
-
-### English Guide
-
-When you provide a target journal, study design, and manuscript topic, the skill first searches for 2-3 full-text published articles from the target journal that use the same or closest design. It then uses their section-level structure and writing logic to guide the revision.
+该 skill 必须使用 **可获取全文的范文**。仅有摘要、PubMed 记录、Crossref 记录、DOI 元数据页、数据库索引页或引文数据库记录只能用于发现候选文献，不能计入范文。
 
 Search priority:
 
-1. Same study design, such as cross-sectional study, scoping review, RCT, or qualitative study.
-2. Population and condition, with disease or condition prioritized before age group.
-3. Intervention, exposure, technology, or method, such as chatbot or AI-based tool.
-4. Outcome variable, such as depression, quality of life, or caregiver burden.
+1. Same target journal + same study design + all available topic components + full text.
+2. Same target journal + same study design + population/condition + intervention/technology/method + full text.
+3. Same target journal + same study design + population/condition + outcome + full text.
+4. Same target journal + same study design + intervention/technology/method + outcome + full text.
+5. Same target journal + same study design + one topic component + full text.
+6. Same target journal + same study design only + full text.
+7. Same publisher family + same study design + topic overlap + full text.
+8. Same field + same study design + topic overlap + full text, only when target-journal evidence is insufficient.
 
-The minimum match is: same study design + at least one component from items 2-4.
+检索优先级：
 
-In practice, the skill should first select full-text articles with the same design and the highest topic similarity. If none are available, it should reduce topic similarity step by step. The weakest acceptable same-journal fallback is a full-text article with the same design but low topic similarity.
+1. 同目标期刊 + 同研究设计 + 全部主题组件 + 可获取全文。
+2. 同目标期刊 + 同研究设计 + 研究对象/疾病 + 干预/技术/方法 + 可获取全文。
+3. 同目标期刊 + 同研究设计 + 研究对象/疾病 + 结局变量 + 可获取全文。
+4. 同目标期刊 + 同研究设计 + 干预/技术/方法 + 结局变量 + 可获取全文。
+5. 同目标期刊 + 同研究设计 + 任一主题组件 + 可获取全文。
+6. 同目标期刊 + 同研究设计 + 可获取全文。
+7. 同出版社 + 同研究设计 + 主题部分重合 + 可获取全文。
+8. 同领域 + 同研究设计 + 主题部分重合 + 可获取全文，仅在目标期刊证据不足时使用。
 
-Articles without accessible full text cannot be used as exemplars. PubMed, Crossref, DOI pages, indexing records, or abstract-only pages may help identify candidates, but they do not count toward the 2-3 exemplar articles. If a publisher page is restricted, the skill should search by DOI, title, PMCID, PMC, institutional repositories, or accepted manuscript copies.
+For example, if the target is `JMIR Aging` and the study is a cross-sectional study on chatbot use for depression among older adults with Alzheimer's disease, the search should first prioritize:
 
-Before polishing, the skill identifies the manuscript section, such as Abstract, Introduction, Methods, Results, Discussion, Limitations, or Conclusion. It then adapts only section-relevant patterns from the exemplar articles.
+`JMIR Aging + cross-sectional study + Alzheimer's disease/dementia + older adults + chatbot + depression + full text`
 
-Example:
+Then reduce topic similarity step by step. The weakest same-journal fallback is:
+
+`JMIR Aging + cross-sectional study + full text`
+
+例如，如果目标期刊是 `JMIR Aging`，研究是关于阿尔茨海默病老年人使用 chatbot 治疗或支持抑郁的横断面研究，应优先检索：
+
+`JMIR Aging + cross-sectional study + Alzheimer's disease/dementia + older adults + chatbot + depression + full text`
+
+如果没有，再逐步减少主题相似度。最弱的同刊兜底选择是：
+
+`JMIR Aging + cross-sectional study + full text`
+
+## Section-Aware Polishing / 分章节润色
+
+The skill adapts only the section-relevant logic from exemplar articles:
+
+- Abstract: heading order, objective sentence, methods compression, result reporting, and conclusion strength.
+- Introduction/Background: problem opening, population framing, gap statement, and objective placement.
+- Methods: design declaration, eligibility criteria, search strategy, screening, extraction, appraisal, ethics, and registration.
+- Results: study selection, descriptive reporting, tables, effect estimates, confidence intervals, and no overinterpretation.
+- Discussion: principal findings, relation to prior work, implications, limitations, and future research.
+- Conclusion: restrained implication language and study-design boundaries.
+
+skill 只借鉴范文中对应章节的写作逻辑：
+
+- Abstract：标题顺序、目标句、方法压缩方式、结果报告和结论强度。
+- Introduction/Background：问题引入、研究对象框定、研究空白和目标位置。
+- Methods：设计声明、Eligibility、检索策略、筛选、资料提取、质量评价、伦理和注册。
+- Results：文献筛选结果、描述性报告、表格引用、效应量/置信区间和避免过度解释。
+- Discussion：主要发现、与既有研究关系、意义、局限和未来研究。
+- Conclusion：克制的实践意义和研究设计边界。
+
+The skill must not copy exemplar wording, import exemplar claims, or overfit to one article.
+
+skill 不应复制范文原句，不应引入范文中的结论或数据，也不应过度模仿单篇文章。
+
+## Language Guardrails / 语言约束
+
+Across all target journals, the skill applies a consistent nursing and medical English standard:
+
+- Preserve the author's meaning, data, citations, and study boundaries.
+- Do not invent evidence, mechanisms, references, novelty claims, or clinical implications.
+- Avoid causal language in non-causal designs such as scoping reviews, cross-sectional studies, qualitative studies, psychometric studies, and descriptive reviews.
+- Replace unsupported causal verbs such as `enhance`, `improve`, `reduce`, `lead to`, `result in`, and `impact` with cautious alternatives such as `may inform`, `could support`, `has the potential to`, `is associated with`, or `may provide a basis for`.
+- Use inclusive medical language, such as `older adults` instead of `elderly`, `people with dementia` instead of `demented patients`, and `people with disabilities` instead of `the disabled`.
+- Avoid repeatedly using the same transition or sentence frame more than twice in nearby paragraphs.
+- Avoid frequent em dashes and overly mechanical parallel sentences.
+
+所有目标期刊均执行统一的护理/医学英文标准：
+
+- 保留作者原意、数据、引用和研究边界。
+- 不编造证据、机制、参考文献、创新性或临床意义。
+- 非因果研究避免因果化表达，例如 scoping review、横断面研究、质性研究、量表研究和描述性综述。
+- 将缺乏因果依据的 `enhance`、`improve`、`reduce`、`lead to`、`result in`、`impact` 等词改为 `may inform`、`could support`、`has the potential to`、`is associated with` 或 `may provide a basis for` 等谨慎表达。
+- 使用包容性医学表达，例如用 `older adults` 替代 `elderly`，用 `people with dementia` 替代 `demented patients`，用 `people with disabilities` 替代 `the disabled`。
+- 避免相邻段落中同一连接词或句式重复超过两次。
+- 避免频繁使用破折号和过于机械的排比句。
+
+## Journal Defaults / 期刊默认规则
+
+- If a target journal is specified, use that journal's current official author guidelines.
+- If the journal belongs to Wiley, Elsevier, JMIR, Sage, Springer Nature, or another publisher, do not rely on publisher-level rules alone; verify the specific journal.
+- `Journal of Advanced Nursing` is a specific Wiley journal, not a publisher category.
+- If no target journal is specified, default to IJNS-style nursing SCI rigor.
+- Do not apply IJNS highlights to JMIR or Wiley journals unless the target journal explicitly requires them.
+- Do not apply JMIR/AMA style to IJNS unless requested by the target journal.
+
+- 如果指定了目标期刊，优先使用该期刊最新官方作者指南。
+- 如果期刊属于 Wiley、Elsevier、JMIR、Sage、Springer Nature 或其他出版社，不应只使用出版社通用规则，而要核对具体期刊。
+- `Journal of Advanced Nursing` 是 Wiley 旗下具体期刊，不是出版社类别。
+- 如果没有指定目标期刊，默认使用 IJNS 风格和护理 SCI 严谨性要求。
+- 不要把 IJNS highlights 套用到 JMIR 或 Wiley 期刊，除非目标期刊明确要求。
+- 不要把 JMIR/AMA 格式套用到 IJNS，除非目标期刊要求。
+
+## Expected Output / 输出格式
+
+Default output:
+
+1. Polished text.
+2. Revision notes.
+3. Causality check.
+4. Exemplar basis, if a full-text exemplar scan was performed.
+5. Formatting check, if manuscript formatting was requested.
+
+默认输出：
+
+1. 润色后的文本。
+2. 修改说明。
+3. 因果表达检查。
+4. 如果进行了全文范文检索，列出范文依据。
+5. 如果用户要求格式检查，列出格式检查结果。
+
+## Example Prompts / 示例提示词
 
 ```text
-Use nursing-paper-polishing to polish this Abstract for JMIR Aging. This is a cross-sectional study about chatbot use for depression among older adults with Alzheimer's disease.
+Use nursing-paper-polishing to polish the Eligibility section for Journal of Nursing Scholarship. The manuscript is a scoping review on AI chatbots among informal caregivers of people with dementia.
 ```
 
-If no target journal is specified, the skill defaults to IJNS-style nursing SCI constraints.
+```text
+请调用 nursing-paper-polishing。目标期刊是 Journal of Nursing Scholarship，文章是关于 AI-chatbots 在痴呆症照护者中的使用情况的 scoping review。请润色 Methods 里的 Eligibility。
+```
+
+```text
+Use nursing-paper-polishing to revise this Abstract for JMIR Aging. This is a cross-sectional study about chatbot use for depression among older adults with Alzheimer's disease.
+```
+
+```text
+请用 nursing-paper-polishing 检查这份 .docx 是否符合 Wiley 旗下 Journal of Advanced Nursing 的投稿格式，并指出需要按作者指南核实的项目。
+```
