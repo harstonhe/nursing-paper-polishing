@@ -1,0 +1,4 @@
+interface:
+  display_name: "Nursing Paper Polishing"
+  short_description: "Polish nursing papers for target journal style."
+  default_prompt: "Polish this nursing or medical manuscript section for the target journal, preserving meaning, applying inclusive medical language, and avoiding causal overclaiming unless the design supports causal inference."
