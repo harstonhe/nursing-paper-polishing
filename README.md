@@ -1,76 +1,76 @@
 <p align="right">
-  <strong>English</strong> | <a href="README.zh-CN.md">中文</a>
+  <strong>中文</strong> | <a href="README.en.md">English</a>
 </p>
 
 # nursing-paper-polishing
 
-Author: Harston
+作者：Harston
 
-A Codex skill for nursing and medical manuscript polishing, journal adaptation, and evidence-constrained section completion.
+这是一个面向护理和医学论文的 Codex skill，用于英文润色、目标期刊适配，以及基于证据的缺失段落补写。
 
-Its core workflow is not generic editing. It adapts writing to a target journal by checking the journal guidelines and learning section-level writing patterns from 2-3 accessible full-text exemplar articles with the same study design and closest topic match.
+它的核心不是普通润色，而是先核对目标期刊作者指南，再检索 2-3 篇可获取全文、研究设计一致且主题最相近的范文文章，最后根据对应章节的写作逻辑来润色或补写。
 
-## What It Does
+## 主要功能
 
-- Polishes abstracts, introductions, methods, results, discussions, conclusions, titles, highlights, and responses.
-- Adapts manuscripts to target journals such as IJNS, JMIR journals, Elsevier journals, Wiley journals, and Journal of Advanced Nursing.
-- Searches full-text exemplar articles before journal-specific rewriting.
-- Completes missing paragraphs or sections from user-provided notes, tables, figures, results, protocols, or partial drafts.
-- Applies nursing and medical language guardrails, including non-causal wording for non-causal designs and inclusive terminology such as `older adults`.
+- 润色摘要、引言、方法、结果、讨论、结论、标题、highlights 和回复信。
+- 适配 IJNS、JMIR、Elsevier 期刊、Wiley 期刊、Journal of Advanced Nursing 等目标期刊。
+- 在期刊适配润色前检索可获取全文的同类范文。
+- 根据用户提供的提纲、表格、图片、结果、protocol 或局部草稿补写缺失段落。
+- 执行护理和医学语言约束，包括非因果研究避免因果表达，以及使用 `older adults` 等包容性术语。
 
-## Core Workflow
+## 核心流程
 
-1. Identify the target journal, article type, study design, topic, and manuscript section.
-2. Check the target journal's current author guidelines.
-3. Find 2-3 accessible full-text exemplar articles, prioritizing the same study design and highest topic similarity.
-4. Extract section-specific patterns from those exemplars.
-5. Polish or complete the user's text without inventing evidence.
-6. Apply causality, inclusive-language, formatting, and target-journal checks.
+1. 识别目标期刊、文章类型、研究设计、主题和论文结构部分。
+2. 核对目标期刊最新作者指南。
+3. 检索 2-3 篇可获取全文的范文，优先同研究设计和最高主题相似度。
+4. 提取范文中对应章节的写作结构。
+5. 在不编造证据的前提下润色或补写文本。
+6. 执行因果表达、包容性语言、格式和目标期刊检查。
 
-## Exemplar Search Rule
+## 范文检索规则
 
-Use full-text exemplars only. Abstract pages, PubMed records, Crossref records, DOI metadata pages, and indexing pages may identify candidates, but they do not count as exemplars.
+只使用可获取全文的范文。摘要页、PubMed 记录、Crossref 记录、DOI 元数据页和数据库索引页只能用于发现候选文章，不能计入范文。
 
-Priority:
+优先级：
 
-1. Same journal + same design + strongest topic match + full text.
-2. Same journal + same design + partial topic match + full text.
-3. Same journal + same design only + full text.
-4. Same publisher or field + same design + topic overlap + full text, only if same-journal evidence is insufficient.
+1. 同期刊 + 同研究设计 + 主题最相似 + 可获取全文。
+2. 同期刊 + 同研究设计 + 部分主题相似 + 可获取全文。
+3. 同期刊 + 同研究设计 + 可获取全文。
+4. 同出版社或同领域 + 同研究设计 + 主题部分相似 + 可获取全文，仅在同期刊证据不足时使用。
 
-## Missing Section Completion
+## 缺失段落补写
 
-The skill can draft missing sections from partial materials, but the user's evidence is the ceiling for every claim.
+skill 可以根据局部材料补写缺失段落，但用户提供的证据是所有结论的上限。
 
-If essential information is missing, it marks:
+缺少关键信息时，会标注：
 
 ```text
-AUTHOR_INPUT_NEEDED: [specific missing item]
+AUTHOR_INPUT_NEEDED: [具体缺失项]
 ```
 
-It must not invent findings, sample sizes, eligibility criteria, search dates, databases, ethics details, registration numbers, citations, or implications.
+不得编造研究结果、样本量、纳入排除标准、检索日期、数据库、伦理信息、注册号、引用或实践意义。
 
-## Example Prompts
+## 示例提示词
 
 ```text
-Use nursing-paper-polishing to polish the Eligibility section for Journal of Nursing Scholarship. The manuscript is a scoping review on AI chatbots among informal caregivers of people with dementia.
+请调用 nursing-paper-polishing。目标期刊是 Journal of Nursing Scholarship，文章是关于 AI-chatbots 在痴呆症照护者中的使用情况的 scoping review。请润色 Methods 里的 Eligibility。
 ```
 
 ```text
-Use nursing-paper-polishing to complete the missing Discussion paragraph for IJNS using these results and Table 2.
+请调用 nursing-paper-polishing，根据这些结果和 Table 2 补写 IJNS 投稿论文的 Discussion 缺失段落。
 ```
 
 ```text
 Use nursing-paper-polishing to revise this Abstract for JMIR Aging. This is a cross-sectional study about chatbot use for depression among older adults with Alzheimer's disease.
 ```
 
-## Output
+## 输出内容
 
-Typical output includes:
+通常包括：
 
-- Polished or completed text
-- Revision notes
-- Causality check
-- Exemplar basis, when full-text exemplar scanning was used
-- Evidence used and author input needed, when completing missing content
-- Formatting check, when requested
+- 润色或补写后的文本
+- 修改说明
+- 因果表达检查
+- 使用全文范文时的范文依据
+- 补写内容时的证据来源和仍需作者补充的信息
+- 用户要求时的格式检查
