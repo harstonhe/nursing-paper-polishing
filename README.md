@@ -1,4 +1,4 @@
-<p align="right">
+﻿<p align="right">
   <strong>中文</strong> | <a href="README.en.md">English</a>
 </p>
 
@@ -7,7 +7,7 @@
 作者：Harston
 
 <p align="center">
-  <img src="assets/huyan-zhaji-qrcode.png" alt="护研札记公众号二维码" width="260">
+  <img src="nursing-paper-polishing/assets/huyan-zhaji-qrcode.png" alt="护研札记公众号二维码" width="260">
 </p>
 
 > wx 公众号搜 **护研札记**，将持续免费分享最新护理科研资讯。我们还提供选题、统计、润色、投稿等1对1指导服务。（团队由多位985护理博士组成，已发表多篇一区及顶刊）
