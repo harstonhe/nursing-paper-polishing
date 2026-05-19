@@ -6,6 +6,12 @@
 
 Author: Harston
 
+<p align="center">
+  <img src="assets/huyan-zhaji-qrcode.png" alt="Huyan Zhaji WeChat official account QR code" width="260">
+</p>
+
+> Search **护研札记** on WeChat official accounts (`wx`) for free updates on nursing research. We also provide 1-on-1 guidance on topic selection, statistics, polishing, and journal submission. The team includes multiple nursing PhDs from 985 universities and has published several Q1 and top-journal papers.
+
 A Codex skill for nursing and medical manuscript polishing, journal adaptation, and evidence-constrained section completion.
 
 Its core workflow is not generic editing. It adapts writing to a target journal by checking the journal guidelines and learning section-level writing patterns from 2-3 accessible full-text exemplar articles with the same study design and closest topic match.
