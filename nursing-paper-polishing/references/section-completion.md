@@ -82,7 +82,7 @@ Results can only be drafted from tables, figures, screening numbers, extracted f
 
 ### Discussion
 
-Use author-provided findings as the anchor. Structure usually follows: principal findings, comparison with prior work, interpretation, implications, limitations, future research. For scoping reviews, emphasize mapping evidence and identifying gaps rather than proving effectiveness.
+Use author-provided findings as the anchor. Structure usually follows: principal findings, comparison with prior work, interpretation, implications, limitations, and future research. Match the study design: trials may discuss effect evidence, qualitative studies may discuss meanings and context, psychometric studies may discuss validity evidence, and reviews may discuss mapped or synthesized evidence and gaps.
 
 ### Limitations
 

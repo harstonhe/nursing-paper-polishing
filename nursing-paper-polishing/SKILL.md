@@ -17,13 +17,22 @@ Load these references as needed:
 - `references/journal-adaptation.md` when the target is JMIR, Elsevier, Wiley, a Wiley journal such as Journal of Advanced Nursing, or another journal/publisher.
 - `references/exemplar-article-scan.md` when the user specifies both a target journal and article content/design, or asks to adapt wording to published articles from that journal.
 - `references/section-completion.md` when the user asks to write, complete, rebuild, or fill a missing paragraph/section from uploaded notes, partial drafts, tables, figures, reviewer comments, or other manuscript materials.
+- `references/section-moves.md` when the requested revision needs section-specific writing logic for nursing, midwifery, health services, public health, or medical journals.
+- `references/writing-diagnostics.md` before substantial polishing, reviewer-comment revision, paragraph rebuilding, or full-section rewriting.
+- `references/phrasebank-playbook.md` when the section logic is clear and phrase-level support is needed for hedging, transitions, limitations, implications, or future work.
+- `references/citation-positioning.md` when revising Introduction, Background, Discussion, literature comparisons, novelty claims, or reviewer-facing justification.
+- `references/style-mechanics.md` for grammar, articles, abbreviation, number/unit, punctuation, register, and mechanical style checks after the main rewrite.
 - `references/inclusive-medical-language.md` for medical, nursing, aging, disability, sex/gender, race/ethnicity, stigma, or participant-description language checks.
+- `references/qian-systems-thinking.md` when the task involves complex revision planning, reviewer-comment triage, missing-section reconstruction, multi-source evidence synthesis, or repeated manuscript improvement loops.
 
 ## Default Stance
 
 - Polish for clarity, restraint, methodological transparency, and relevance to international nursing and health care readers.
+- Language serves the scientific argument. Do not polish sentences while leaving the section's reasoning, reporting logic, or evidence boundary broken.
 - Treat study design as the first constraint on language.
 - Make the contribution precise: what uncertainty is reduced, what question is clarified, or what practice, policy, workforce, education, or methods issue is better understood.
+- Use the `claim-evidence-boundary` standard for every important sentence: what is being claimed, what supports it, and where the claim stops.
+- Treat a manuscript as an evidence-control system: every claim needs an evidence input, every journal or reviewer requirement is a constraint, and every revision should reduce uncertainty or improve traceability.
 - Prefer evidence-informed wording over promotional claims.
 - Keep nursing context visible without overstating local generalizability.
 - Use inclusive, person-respecting, internationally understandable language.
@@ -59,14 +68,113 @@ Do not follow the Nature-style writing order by default. Use a design-first and 
 3. Identify the study design: randomized trial, quasi-experimental study, cohort, cross-sectional survey, qualitative study, mixed-methods study, psychometric/instrument validation, systematic review, scoping review, discussion paper, or methods paper.
 4. Identify the relevant reporting guideline before polishing: CONSORT, STROBE, COREQ, SRQR, PRISMA, PRISMA-ScR, JBI scoping review guidance, COSMIN, GRRAS, TRIPOD, CHEERS, TIDieR, SAMPL, or another suitable EQUATOR guideline.
 5. Extract journal-specific constraints: abstract headings and word count, keywords, highlights or significance statement, main text headings, references, tables/figures, anonymization, data availability, AI disclosure, and formatting.
-6. If the target journal and article content/design are specified, perform an exemplar article scan before polishing. Find 2-3 comparable full-text articles from the same journal or publisher family, prioritizing the same study design.
-7. Identify the exact manuscript section being polished or completed, such as Abstract, Introduction, Methods, Results, Discussion, Limitations, Conclusion, Highlights, or title page. If the section is not explicit, infer it from headings and content; if inference is unsafe, ask for the section before doing a section-specific rewrite.
-8. Audit Methods and Results first, because they determine what the rest of the manuscript can legitimately claim.
-9. If the requested section is missing or only notes are provided, use `references/section-completion.md` to draft evidence-constrained prose before polishing.
-10. Polish Discussion, Limitations, and Conclusions next, keeping interpretation tied to the findings.
-11. Revise Background after the evidence logic is clear, using it to justify the problem, gap, and objective.
-12. Polish Abstract, Title, Keywords, highlights, significance statement, impact statement, or social media abstract last according to the selected journal.
-13. If the user provides a `.docx`, tables, figures, captions, or asks for submission readiness, audit formatting consistency after language revision.
+6. Diagnose the failure mode before editing. Use `references/writing-diagnostics.md` to decide whether the issue is paper-type logic, section role, paragraph progression, claim-evidence mismatch, citation positioning, Results/Discussion mixing, or sentence-level mechanics.
+7. For complex or repeated revisions, model the task as a feedback loop: identify the control goal, evidence inputs, journal/reviewer constraints, current error signal, and next revision action. Use `references/qian-systems-thinking.md` when helpful.
+8. If the target journal and article content/design are specified, perform an exemplar article scan before polishing. Find 2-3 comparable full-text articles from the same journal or publisher family, prioritizing the same study design.
+9. Identify the exact manuscript section being polished or completed, such as Abstract, Introduction, Methods, Results, Discussion, Limitations, Conclusion, Highlights, or title page. If the section is not explicit, infer it from headings and content; if inference is unsafe, ask for the section before doing a section-specific rewrite.
+10. Load `references/section-moves.md` when the section's move order is unclear or the paragraph needs restructuring.
+11. Apply the `claim-evidence-boundary` check before sentence polishing. Remove, qualify, or mark unsupported claims.
+12. Audit Methods and Results first, because they determine what the rest of the manuscript can legitimately claim.
+13. If the requested section is missing or only notes are provided, use `references/section-completion.md` to draft evidence-constrained prose before polishing.
+14. Polish Discussion, Limitations, and Conclusions next, keeping interpretation tied to the findings.
+15. Revise Background after the evidence logic is clear, using it to justify the problem, gap, and objective.
+16. Polish Abstract, Title, Keywords, highlights, significance statement, impact statement, or social media abstract last according to the selected journal.
+17. Run phrase, citation, inclusive-language, causality, and mechanical style checks after the structure is correct.
+18. If the user provides a `.docx`, tables, figures, captions, or asks for submission readiness, audit formatting consistency after language revision.
+
+## Diagnostic Workflow
+
+Before rewriting a substantial paragraph or section, identify the main failure mode.
+
+Prioritize fixes in this order:
+
+1. `paper type`: the manuscript is using the wrong logic for its design or article type.
+2. `section job`: the paragraph is doing the work of another section, such as Discussion inside Results.
+3. `paragraph logic`: the paragraph lacks one controlling idea or mixes unrelated propositions.
+4. `claim-evidence-boundary`: the claim has no evidence, the evidence has no point, or the implication exceeds the design.
+5. `citation positioning`: prior work is misrepresented, uncited, over-flattened, or used to manufacture novelty.
+6. `sentence polish`: grammar, concision, transitions, rhythm, and mechanics.
+
+If a section is structurally underdeveloped, briefly state the structural diagnosis before the polished version unless the user asks for direct output only.
+
+## Claim-Evidence-Boundary Standard
+
+Every important scientific statement should pass three checks:
+
+- `Claim`: What exactly is the sentence saying?
+- `Evidence`: Which result, table, method detail, participant quote, statistic, protocol item, or verified source supports it?
+- `Boundary`: What design limit, population limit, setting limit, uncertainty, or reviewer concern constrains the claim?
+
+Repair common failures before polishing:
+
+- claim without evidence: qualify, remove, or request author input;
+- data without a point: add the specific interpretation supported by the data;
+- implication without boundary: add scope, uncertainty, or future-work language;
+- association written as mechanism: replace causal wording with design-appropriate wording;
+- review evidence written as trial evidence: describe mapped, synthesized, or appraised evidence rather than effectiveness.
+
+When evidence is missing, use `AUTHOR_INPUT_NEEDED: [specific missing evidence]` rather than smoothing over the gap.
+
+## Results and Discussion Boundary
+
+Keep Results and Discussion distinct across all study designs.
+
+Results should:
+
+- report what was observed, measured, coded, appraised, synthesized, or mapped;
+- specify the relevant sample, condition, comparison, time point, table, figure, theme, estimate, or rating;
+- use past tense for completed observations and avoid long explanations of meaning;
+- avoid practice recommendations, causal explanations, mechanism claims, and broad implications.
+
+Discussion should:
+
+- interpret principal findings in relation to the research question and prior work;
+- explain plausible reasons for patterns without presenting speculation as fact;
+- state implications for nursing, clinical practice, education, policy, management, or future research within the evidence boundary;
+- acknowledge uncertainty, transferability, equity, feasibility, and safety where relevant.
+
+For reviews, Results report what the evidence base contains. Discussion explains what the mapped or synthesized evidence may mean and where it remains limited.
+
+## Citation Positioning and Fairness
+
+Use citations to position the manuscript honestly, not only to decorate claims.
+
+Do:
+
+- cite the source actually read and verified;
+- distinguish prior evidence, prior interpretation, methods borrowed, frameworks adapted, and points of contrast;
+- acknowledge what earlier studies established before stating what remains uncertain;
+- make novelty precise and bounded by population, context, method, outcome, or evidence type.
+
+Do not:
+
+- cite a paper for a claim it did not make;
+- use a secondary source when the primary source is available and necessary;
+- imply that previous work was absent, weak, or irrelevant just to strengthen the present manuscript;
+- write `no studies`, `first`, `novel`, `pioneering`, or `little is known` unless the literature search supports that exact scope.
+
+## Length and Proportion Control
+
+Before drafting or polishing a section, identify any journal-specific length limits for the manuscript, abstract, structured abstract subheadings, highlights, limitations, conclusion, tables, figures, and supplementary files.
+
+Apply this priority order:
+
+1. Follow explicit limits from the target journal's current author guidelines, article type instructions, templates, or editor/reviewer comments.
+2. If the journal gives no section-specific limit, infer a reasonable section length from 2-3 accessible full-text exemplar articles from the same journal and same article type or method.
+3. If no target journal is specified, default to concise IJNS-style proportions and the same-design nursing SCI exemplars available from the scan.
+
+For Abstract, Limitations, and Conclusion:
+
+- Keep the section proportional to the full manuscript and to the journal's published examples.
+- Do not make limitations or conclusions longer than the evidence warrants.
+- Avoid generic extended summaries in Conclusion. State the mapped evidence, its meaning for nursing/clinical audiences, and the research boundary.
+- For scoping and systematic reviews, Limitations should address search scope, language/full-text restrictions, heterogeneity, evidence gaps, and review-process boundaries without implying that the review design was expected to establish causality.
+
+For generated output:
+
+- Keep the complete polished response under 8,000 characters unless the user or journal explicitly requests a longer text.
+- Allocate words across sections according to rhetorical weight. Methods and Results may need more detail; Limitations and Conclusion should usually be compact unless the target journal's examples support a longer format.
+- If the user's draft exceeds the target length, compress before adding new material.
 
 ## Exemplar Article Adaptation
 
