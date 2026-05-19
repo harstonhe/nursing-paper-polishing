@@ -59,7 +59,7 @@ It must not invent findings, sample sizes, eligibility criteria, search dates, d
 ## Example Prompts
 
 ```text
-Use nursing-paper-polishing to polish the Eligibility section for Journal of Nursing Scholarship. The manuscript is a scoping review on AI chatbots among informal caregivers of people with dementia.
+Use nursing-paper-polishing to polish the Eligibility section for a target nursing journal. The manuscript is a nursing-related scoping review.
 ```
 
 ```text

@@ -59,7 +59,7 @@ AUTHOR_INPUT_NEEDED: [具体缺失项]
 ## 示例提示词
 
 ```text
-请调用 nursing-paper-polishing。目标期刊是 Journal of Nursing Scholarship，文章是关于 AI-chatbots 在痴呆症照护者中的使用情况的 scoping review。请润色 Methods 里的 Eligibility。
+请调用 nursing-paper-polishing。目标期刊是某护理 SCI 期刊，文章是一篇护理相关 scoping review。请润色 Methods 里的 Eligibility。
 ```
 
 ```text
