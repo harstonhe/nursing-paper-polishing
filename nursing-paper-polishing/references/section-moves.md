@@ -172,6 +172,18 @@ Preferred move order:
 4. key result with numbers if available
 5. implication
 
+Compression rule:
+
+- Treat the abstract as a decision aid for editors and readers, not as a miniature full manuscript.
+- First identify the main decision question and the central problem the paper resolves.
+- Preserve only information that closes the logic loop: gap, objective, design, decisive evidence, and bounded implication.
+- Prefer one decisive result hierarchy over exhaustive reporting: primary finding, key comparison or validation signal, and the boundary needed to interpret it.
+- For complex evaluations, compress by evidence layers rather than deleting metrics mechanically. Preserve one or two decisive indicators from each evidence layer that supports the main claim, such as task performance, agreement or similarity, implementation feasibility, safety, acceptability, reliability, or human/expert validation.
+- Prefer indicators that add non-redundant evidential value. Do not report all available metrics unless each changes the reader's decision.
+- Remove secondary mechanisms, step-by-step procedural detail, interpretive repetition, redundant metric definitions, non-decisive statistics, and unsupported implications.
+- After compression, audit whether the retained indicators reflect the author's intended argument and whether named outcomes, dimensions, and validation terms are consistent across Objective, Methods, Results, and Conclusions.
+- For medical, nursing, digital health, and AI-related abstracts, end with calibrated language that states what the evidence supports and what still requires human judgment, validation, implementation testing, or future research.
+
 Useful phrase families:
 
 - `X remains challenging because ...`

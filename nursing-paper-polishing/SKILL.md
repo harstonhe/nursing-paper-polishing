@@ -73,14 +73,14 @@ Do not follow the Nature-style writing order by default. Use a design-first and 
 8. If the target journal and article content/design are specified, perform an exemplar article scan before polishing. Find 2-3 comparable full-text articles from the same journal or publisher family, prioritizing the same study design.
 9. Identify the exact manuscript section being polished or completed, such as Abstract, Introduction, Methods, Results, Discussion, Limitations, Conclusion, Highlights, or title page. If the section is not explicit, infer it from headings and content; if inference is unsafe, ask for the section before doing a section-specific rewrite.
 10. Load `references/section-moves.md` when the section's move order is unclear or the paragraph needs restructuring.
-11. Apply the `claim-evidence-boundary` check before sentence polishing. Remove, qualify, or mark unsupported claims.
+11. Apply the `claim-evidence-boundary` and claim-scope checks before sentence polishing. Remove, qualify, or mark unsupported claims.
 12. Audit Methods and Results first, because they determine what the rest of the manuscript can legitimately claim.
 13. If the requested section is missing or only notes are provided, use `references/section-completion.md` to draft evidence-constrained prose before polishing.
 14. Polish Discussion, Limitations, and Conclusions next, keeping interpretation tied to the findings.
 15. Revise Background after the evidence logic is clear, using it to justify the problem, gap, and objective.
 16. Polish Abstract, Title, Keywords, highlights, significance statement, impact statement, or social media abstract last according to the selected journal.
 17. Run phrase, citation, inclusive-language, causality, and mechanical style checks after the structure is correct.
-18. If the user provides a `.docx`, tables, figures, captions, or asks for submission readiness, audit formatting consistency after language revision.
+18. If the user provides a `.docx`, tables, figures, captions, EndNote files, or asks for submission readiness, run formatting, citation/reference, encoding, and file-integrity QA after language revision.
 
 ## Diagnostic Workflow
 
@@ -114,6 +114,26 @@ Repair common failures before polishing:
 - review evidence written as trial evidence: describe mapped, synthesized, or appraised evidence rather than effectiveness.
 
 When evidence is missing, use `AUTHOR_INPUT_NEEDED: [specific missing evidence]` rather than smoothing over the gap.
+
+## Claim-Scope Audit for Preliminary Evidence
+
+Before polishing Abstract, Discussion, Implications, Limitations, and Conclusions, check whether the manuscript's application-level claims exceed its evidence level.
+
+Apply this audit especially to exploratory, simulation, feasibility, pilot, descriptive, qualitative, psychometric, preclinical, algorithmic, and other non-implementation studies.
+
+High-scope language includes:
+
+- `clinical use`, `clinical decision-making`, `clinical decision support`, `practice recommendation`, `guideline development`, `deployment`, `implementation`, `real-world readiness`, `reliable support system`, `replacement of professional judgment`, and `rapid response`.
+
+Unless the study includes prospective validation, real-world implementation, patient or service outcomes, clinical safety testing, or formal guideline-development procedures, move claims to the correct evidence level:
+
+- from clinical decision-making to decision preparation;
+- from implementation to feasibility or readiness for validation;
+- from replacement to complementing professional judgment;
+- from guideline development to informing future consensus work;
+- from effectiveness or clinical utility to potential usefulness, association, or hypothesis-generating evidence.
+
+Use evidence-appropriate language such as `preliminary refinement`, `prioritization`, `feasibility signal`, `early-stage support`, `preparation for expert review`, `requires professional calibration`, and `warrants prospective or real-world validation`.
 
 ## Results and Discussion Boundary
 
@@ -166,6 +186,11 @@ Apply this priority order:
 For Abstract, Limitations, and Conclusion:
 
 - Keep the section proportional to the full manuscript and to the journal's published examples.
+- Treat an abstract word limit as a ceiling, not a target. Unless the user asks for a full-length abstract, default to a submission-efficient version at roughly 65%-80% of the stated journal limit while preserving the complete logic loop.
+- For abstracts, perform a compression pass after drafting: remove secondary background, procedural detail, repeated metric explanations, non-decisive statistics, discussion-like interpretation, and claims that do not affect editorial judgment.
+- Treat abstracts as engineered decision systems rather than shortened manuscripts. Identify the target reader's decision problem and the manuscript's main contradiction, then compress through five moves: gap, objective, design, decisive evidence, and bounded implication. Preserve only information that closes this logic loop.
+- For abstracts reporting complex evaluations, compress by evidence layers rather than deleting metrics mechanically. Preserve one or two decisive indicators from each evidence layer that supports the manuscript's main claim, such as task performance, agreement or similarity, implementation feasibility, safety, acceptability, reliability, or human/expert validation. Prefer indicators that add non-redundant evidential value.
+- Do not report all available metrics unless each changes the reader's decision. After compression, audit whether the retained indicators reflect the author's intended argument and whether all named outcomes, dimensions, and validation terms are consistent across Objective, Methods, Results, and Conclusions.
 - Do not make limitations or conclusions longer than the evidence warrants.
 - Avoid generic extended summaries in Conclusion. State the mapped evidence, its meaning for nursing/clinical audiences, and the research boundary.
 - For scoping and systematic reviews, Limitations should address search scope, language/full-text restrictions, heterogeneity, evidence gaps, and review-process boundaries without implying that the review design was expected to establish causality.
@@ -230,8 +255,8 @@ For non-causal designs, including cross-sectional studies, descriptive surveys, 
   - `may provide a basis for`
   - `could be considered when developing`
   - `warrants further evaluation`
-- Avoid policy or practice imperatives from descriptive evidence. Use `may be useful for`, `could be considered`, or `future intervention studies are needed to evaluate`.
-- Keep conclusions aligned with results. Do not claim effectiveness, benefit, risk reduction, improved outcomes, or clinical utility unless directly tested.
+- Avoid turning descriptive or exploratory evidence into policy or practice imperatives. Use `may be useful for`, `could be considered`, or `future intervention studies are needed to evaluate`.
+- Keep causal conclusions aligned with results. Do not claim effectiveness, benefit, risk reduction, or improved outcomes unless directly tested.
 
 ## IJNS Section Logic
 
@@ -319,20 +344,37 @@ Write two or three single-sentence bullets under each heading. Each bullet shoul
 
 ## Formatting and Layout Audit
 
-When the user asks for submission formatting, works in a Word manuscript, or provides tables/figures, apply the target journal's instructions first. If the target journal allows free-format submission or gives no specific formatting rule, apply these defaults as a consistency standard:
+When the user asks for submission formatting, works in a Word manuscript, or provides tables/figures, apply the target journal's explicit instructions first. If the journal is silent and the user gives formatting instructions, follow the user. If neither is available, apply these defaults as a consistency standard:
 
-- Use `Times New Roman` consistently across the main manuscript.
-- Use 12 pt font for the main text, abstract, headings, references, and figure/table captions unless a template explicitly differs.
-- Use double line spacing for the main manuscript and references; keep spacing consistent across sections.
-- Use single-column layout and editable Word-compatible text.
-- Use consistent heading hierarchy and avoid decorative heading styles.
-- Keep margins, paragraph indents, before/after spacing, page numbering, and header short title consistent.
+- Use `Times New Roman` throughout the manuscript, including body text, headings, references, tables, figure captions, and notes.
+- Use body text size 12 pt (Chinese xiaosi / small-four body size) for the main text, abstract, references, table notes, and figure captions unless a template explicitly differs.
+- Use major heading size 14 pt (Chinese sihao / fourth-size heading) for main headings such as Introduction, Methods, Results, Discussion, Limitations, Conclusion, and References; bold all main headings.
+- Use 12 pt bold for subheadings unless the journal requires another hierarchy.
+- Use double line spacing by default for journal submission manuscripts and references, unless the journal or user requests 1.5 spacing or another setting.
+- Separate paragraphs clearly. Do not output dense, unbroken blocks of text.
+- Use single-column, editable Word-compatible text, justified body alignment where appropriate, first-line body paragraph indentation, and standard 1-inch / 2.54 cm margins unless instructed otherwise.
+- Use a consistent heading hierarchy and avoid decorative heading styles, colored fonts, unnecessary italics, or inconsistent spacing.
 - Use italics only where required, such as statistical symbols, species names, or template conventions; remove leftover template instruction italics before submission.
 - Ensure tables and figures use readable, consistent typography: usually 10-11 pt Times New Roman for table body text and 8-10 pt for figure panel labels or axis text, with no unnecessary styling.
 - Keep table titles above tables and figure captions below figures, unless the user's target template requires another placement.
 - Define all abbreviations used in tables or figures in table notes or figure captions.
 - Check that table and figure numbering follows order of first citation in the text.
 - For final polish, report any formatting deviations separately from language revision notes.
+
+## Encoding, Citation, And File QA
+
+Before final delivery, scan the entire output, including DOCX XML/text, Markdown, references, tables, captions, and exported reference files, for encoding or text-corruption artifacts. Fix broken accented names such as `P?rez-Esteve`, broken apostrophes such as `one?s` or `author?s`, Unicode replacement characters such as `U+FFFD`, garbled symbols, corrupted non-English names or journal titles, broken hyphens/dashes/minus signs, and question marks that are not real punctuation.
+
+Run citation and reference QA before final delivery:
+
+- Check that every in-text citation has a matching reference entry.
+- Check that every reference entry is cited in the text, unless intentionally included as supplementary background.
+- Verify DOI, PMID, PMCID, or publisher metadata when available.
+- Ensure author names, years, article titles, journal names, volume, issue, pages/article numbers, and DOI links are consistent across text, tables, and References.
+- Mark unresolved or uncertain references with `[REF-CHECK: issue]` rather than silently guessing.
+- If the user requests EndNote compatibility, export references as `.ris`, `.nbib`, or another importable format.
+
+Before telling the user the work is complete, verify the DOCX package opens structurally or passes validation, required formatting was actually written into the file XML/styles, no encoding artifacts remain, paragraphing is readable, and the writing respects the study design without overclaiming beyond the evidence.
 
 ## Output Format
 
@@ -348,7 +390,8 @@ If an exemplar article scan was performed, add:
 
 If formatting was requested or a manuscript file was provided, add:
 
-5. `Formatting check:` with concise notes on font, size, line spacing, headings, tables, figures, captions, abbreviations, and unresolved items.
+5. `Formatting check:` with concise notes on font, size, line spacing, headings, paragraphing, tables, figures, captions, abbreviations, and unresolved items.
+6. `Final QA:` when files or references were produced, report citation/reference consistency, encoding scan status, file integrity, and EndNote export status when relevant.
 
 If the user asks for tracked reasoning or teaching feedback, provide:
 

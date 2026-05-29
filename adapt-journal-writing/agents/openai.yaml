@@ -1,0 +1,4 @@
+interface:
+  display_name: "Adapt Journal Writing"
+  short_description: "Adapt manuscript writing to a target journal using guidelines and exemplar articles"
+  default_prompt: "Adapt this manuscript section to my target journal. First verify the journal requirements, learn from same-journal exemplar articles of the same article type, then rewrite with claim-evidence-boundary logic."
