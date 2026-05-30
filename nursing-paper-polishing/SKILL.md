@@ -187,6 +187,7 @@ For Abstract, Limitations, and Conclusion:
 
 - Keep the section proportional to the full manuscript and to the journal's published examples.
 - Treat an abstract word limit as a ceiling, not a target. Unless the user asks for a full-length abstract, default to a submission-efficient version at roughly 65%-80% of the stated journal limit while preserving the complete logic loop.
+- When the user provides a target-journal exemplar abstract, treat its word count, sentence count, subsection length, and information density as explicit constraints. If the first polished version is longer than the exemplar by more than about 15%-20%, compress it before delivery.
 - For abstracts, perform a compression pass after drafting: remove secondary background, procedural detail, repeated metric explanations, non-decisive statistics, discussion-like interpretation, and claims that do not affect editorial judgment.
 - Treat abstracts as engineered decision systems rather than shortened manuscripts. Identify the target reader's decision problem and the manuscript's main contradiction, then compress through five moves: gap, objective, design, decisive evidence, and bounded implication. Preserve only information that closes this logic loop.
 - For abstracts reporting complex evaluations, compress by evidence layers rather than deleting metrics mechanically. Preserve one or two decisive indicators from each evidence layer that supports the manuscript's main claim, such as task performance, agreement or similarity, implementation feasibility, safety, acceptability, reliability, or human/expert validation. Prefer indicators that add non-redundant evidential value.
@@ -208,11 +209,15 @@ When a target journal and study design/content are available, use `references/ex
 The scan should:
 
 - Search the target journal first, then the publisher family if the journal has too few matches.
-- Prefer 2-3 recent or highly relevant full-text articles using the same design.
+- Prefer 2-3 full-text articles from the target journal, same article type, and same or adjacent design published within the last 3 years.
+- Use 4-5-year-old exemplars only if fewer than two suitable same-journal examples are available from the last 3 years, and state this limitation in revision notes.
+- Avoid using exemplars older than 5 years to calibrate current abstract headings, word count, section density, or journal-format expectations unless the user explicitly provides that exemplar or no newer same-journal examples exist.
+- Treat older classic methods or reporting papers as methodological references, not as current journal-style exemplars.
 - Require the same study design plus at least one content match whenever possible.
 - Exclude articles whose full text or relevant manuscript section cannot be accessed. Abstract-only pages, metadata records, indexing pages, and citation databases are not sufficient exemplars.
 - Maximize topic similarity first, then relax topic components stepwise. Use same-design full-text articles with no topic overlap only as the last same-journal fallback.
 - Extract section-specific patterns only. For example, use Abstract exemplars to revise abstracts, Introduction exemplars for gap logic, Methods exemplars for reporting sequence, and Results exemplars for statistical reporting.
+- For abstract exemplars, extract operational constraints before rewriting: exact headings, total length, subsection length, sentence count per subsection, methods/design detail, findings/results density, conclusion scope, and final relevance/practice-implication brevity if such a subsection exists.
 - Compare patterns across exemplars and synthesize the writing logic; do not copy sentences or imitate one article too closely.
 - Cite or list the exemplar articles used in revision notes when internet search was performed.
 
@@ -272,6 +277,8 @@ For non-causal designs, including cross-sectional studies, descriptive surveys, 
 
 - Keep the abstract concise, factual, and stand-alone.
 - Use the structure required by the relevant reporting guideline or IJNS template.
+- If adapting to a provided journal exemplar, match its density as well as its structure: keep each subsection to 1-2 sentences when the exemplar does so, avoid turning findings/results into detailed mini-results, and keep any final relevance, application, or practice-implication subsection compact.
+- Do not add a `Clinical Relevance` heading unless the target journal, author guidelines, template, or user-provided exemplar uses that heading. For Journal of Nursing Scholarship, use the JNS-style abstract headings only when JNS is the target or exemplar basis.
 - Keep the optional social media abstract to 140 characters when the user is preparing full IJNS submission materials.
 - For research papers, usually use: `Background`, `Objective`, `Design`, `Setting(s)`, `Participants`, `Methods`, `Results`, `Conclusions`, and `Registration` when relevant.
 - For reviews, usually use: `Background`, `Objective`, `Information sources`, `Methods`, `Results`, `Conclusions`, and `Registration` when relevant.

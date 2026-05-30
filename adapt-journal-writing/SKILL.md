@@ -91,8 +91,11 @@ For example, if the manuscript is a scoping review:
 
 - search the target journal for `"scoping review"`
 - add topic terms when needed
-- prefer recent articles from the last 3-5 years unless the journal has few examples
+- prefer recent articles from the last 3 years, especially for abstract structure, headings, article-type conventions, AI/digital health topics, and fast-changing clinical or publishing norms
+- use articles 4-5 years old only when fewer than two suitable same-journal, same-article-type exemplars are available from the last 3 years, and explicitly note this limitation
+- avoid using exemplars older than 5 years for current journal-format calibration unless the user explicitly provides the exemplar or no newer same-journal examples exist
 - keep 2-3 articles that are article-type matches and preferably topic-adjacent
+- distinguish current-format exemplars from classic methodological sources; older methods papers may justify methods, but they should not set current abstract length, heading, or density rules
 
 ### 3b. Verify Exemplar Articles With CrossRef
 
@@ -120,8 +123,10 @@ For each exemplar, capture:
 
 - title, year, DOI or URL
 - CrossRef or DOI verification status
+- recency status: `within 3 years`, `4-5 years`, or `older with justification`
 - article type
 - abstract structure
+- abstract subsection sentence count, approximate word count, and information density
 - section heading pattern
 - Introduction logic
 - Methods reporting depth
@@ -130,6 +135,31 @@ For each exemplar, capture:
 - tone and claim strength
 
 Use `references/exemplar-learning.md` for the extraction checklist.
+
+#### Exemplar-Calibrated Abstract Length And Density
+
+When the user provides or the search identifies a target-journal exemplar abstract, convert the exemplar into operational constraints before rewriting. Do not only imitate heading labels or tone.
+
+Extract and apply:
+
+- required or customary abstract headings exactly as used by the journal or exemplar
+- approximate total abstract length and length of each subsection
+- number of sentences per subsection
+- level of detail allowed in methods/design and findings/results subsections
+- whether findings/results report only main categories or detailed subfindings
+- whether conclusions include recommendations, limitations, or future research
+- how concise the final practice, relevance, implications, or application subsection should be, if the journal uses one
+
+Use the exemplar as a density ceiling:
+
+- Match the exemplar's subsection length unless the user or journal requests a longer abstract.
+- Keep each abstract subsection to 1-2 sentences when the exemplar does so.
+- Avoid expanding findings/results into detailed mini-results when the exemplar reports only the main categorization.
+- Avoid over-explaining final relevance or practice-implication subsections; keep them as concise as the exemplar.
+- If the draft is longer than the exemplar by more than about 15%-20%, shorten it before delivery.
+- Treat word count, sentence count, subsection density, claim strength, and level of detail as part of journal style, not optional polishing preferences.
+
+Journal-specific isolation: only apply `Clinical Relevance` as a required abstract heading when the target journal or user-provided exemplar uses that heading, such as Journal of Nursing Scholarship. For other journals, preserve their own abstract headings and do not add a JNS-style `Clinical Relevance` section unless requested.
 
 ### 4. Build A Journal Adaptation Profile
 

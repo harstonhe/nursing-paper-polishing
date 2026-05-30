@@ -35,7 +35,7 @@ Use this structure for the final output unless the user requests a different for
 |---|---|---|
 | Scope/readership |  |  |
 | Article type |  |  |
-| Abstract/word/format |  |  |
+| Abstract/headings/word/density |  |  |
 | Reporting checklist |  |  |
 | Ethics/data/conflicts |  |  |
 
@@ -55,6 +55,7 @@ Use this structure for the final output unless the user requests a different for
 
 ### Title and Abstract
 - [具体问题或确认无明显问题]
+- [If relevant: compare abstract headings, word count, subsection density, and final relevance/practice-implication claims with target-journal requirements or same-article-type exemplars.]
 
 ### Introduction
 - [研究问题、gap、目标期刊读者价值]
