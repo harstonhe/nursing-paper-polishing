@@ -1,0 +1,7 @@
+interface:
+  display_name: "Niuma reviewer"
+  short_description: "Target-journal medical manuscript reviewer"
+  default_prompt: "Use $niuma-reviewer to evaluate my medical manuscript against a target journal's current requirements."
+
+policy:
+  allow_implicit_invocation: true

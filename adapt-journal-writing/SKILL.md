@@ -182,11 +182,29 @@ Check each reference for:
 - volume, issue, page range, and article number
 - DOI or stable URL formatting
 - duplicate entries
+- duplicate DOI/PMID/PMCID records, including duplicates hidden inside EndNote `ADDIN EN.CITE` field metadata
 - obvious encoding problems
 - mismatch between DOI metadata and the written reference
 - incomplete, preprint, conference, or in-press records needing author confirmation
 
 When CrossRef or DOI metadata is available, use it to verify DOI, title, journal/container title, and publication year. Do not invent missing fields.
+
+#### Duplicate Reference And EndNote Field Deduplication
+
+When revising a DOCX or producing citation-managed outputs, check duplicates at two levels before final delivery:
+
+1. Visible reference list: normalize DOI, PMID, PMCID, and stable URL values; treat the same normalized DOI/PMID/PMCID as the same work even if author spelling, title punctuation, capitalization, or year suffix differs.
+2. Embedded citation fields: inspect Word `ADDIN EN.CITE`/EndNote travelling-library metadata when present; flag or fix cases where the same DOI appears with different `RecNum` values.
+
+Deduplicate conservatively:
+
+- Prefer the record already used in the original manuscript or the record with the most complete verified metadata.
+- If one duplicate is plain text and one is an EndNote field, keep the EndNote-linked record when it is metadata-consistent.
+- If two EndNote records share the same DOI but use different `RecNum` values, replace in-text field references to the duplicate record with the retained record's `RecNum` and embedded metadata where feasible.
+- Remove duplicate reference-list entries only after confirming the DOI/PMID/PMCID match; do not merge records based only on similar titles.
+- Update every in-text citation that pointed to the removed duplicate so it points to the retained record.
+- Preserve year suffixes such as `2025a`/`2025b` only when they refer to different works; remove or adjust suffixes when duplicates collapse into one retained work.
+- Report what was retained, what was removed or remapped, and which identifiers justified the decision.
 
 If a reference is wrong or uncertain, append a compact marker at the end of that same reference entry:
 
@@ -225,6 +243,7 @@ Run a final QA pass before telling the user the work is complete:
 
 1. Formatting QA: verify the required font, size, line spacing, headings, margins, paragraphing, and table/figure caption placement were actually written into the file.
 2. Citation/reference QA: check every in-text citation has a matching reference entry, every reference is cited unless intentionally supplementary, and DOI/PMID/PMCID/publisher metadata are verified when available.
+   - Include duplicate-reference QA: no duplicate DOI/PMID/PMCID appears in the visible reference list, and no same DOI maps to multiple EndNote `RecNum` values in DOCX fields.
 3. Encoding QA: confirm no suspicious question marks, `U+FFFD`, broken apostrophes, or corrupted author/place/journal names remain.
 4. Claim-evidence-boundary QA: confirm the writing respects article type, study design, author results, and verified sources without overclaiming.
 5. File integrity QA: verify DOCX package validity or structural opening, and export `.ris`, `.nbib`, or another importable format when the user requests EndNote compatibility.
@@ -270,10 +289,11 @@ When references are involved:
 4. Report any unmatched citation or uncited reference.
 5. Verify metadata through DOI, CrossRef, PubMed, PMCID, or publisher pages when available.
 6. Correct obvious metadata mismatches only when verified; otherwise mark `[REF-CHECK: issue]`.
-7. Generate the plain-text manuscript version by default.
-8. Generate a separate EndNote-field DOCX version only when explicitly requested.
-9. Export an updated `.ris` or `.nbib` file when the user requests EndNote/reference-manager import.
-10. Run final QA on every generated version.
+7. Run duplicate-reference checks by normalized DOI/PMID/PMCID and, for DOCX files, by EndNote field `RecNum`; collapse duplicates only when the identifier match is clear.
+8. Generate the plain-text manuscript version by default.
+9. Generate a separate EndNote-field DOCX version only when explicitly requested.
+10. Export an updated `.ris` or `.nbib` file when the user requests EndNote/reference-manager import.
+11. Run final QA on every generated version.
 
 #### Output Naming
 
@@ -295,6 +315,7 @@ Before final delivery:
 - if an EndNote-field version is produced, confirm the number of inserted citation fields equals the number of citation groups in the manuscript body
 - confirm no citation groups remain unmatched
 - confirm no reference is clearly mismatched to the wrong article
+- confirm duplicate DOI/PMID/PMCID records have been removed or remapped to one retained record, including duplicates embedded in EndNote field metadata
 - confirm corrected reference metadata is reflected in DOCX and RIS/NBIB outputs when produced
 - confirm no encoding artifacts remain in author names, article titles, journal names, or field codes
 - tell the user that EndNote recognition must be validated in Word with the EndNote plugin before journal submission
